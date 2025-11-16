@@ -1,6 +1,13 @@
 [build]
+  # Indique à Netlify que le site est un site statique et que les fichiers à déployer sont à la racine (/).
   publish = "/"
-  command = ""
+  # Le site étant statique, la commande de construction n'est pas nécessaire, 
+  # mais il est bon d'en avoir une qui confirme le succès (pour la fonction GPT).
+  command = "echo 'Build successful'" 
+
+# Section pour l'intégration de Builder.io
+# Nous utilisons le plugin officiel de Netlify pour l'édition visuelle, qui gère l'intégration avec Builder.io.
+# Ce plugin s'appelle désormais @netlify/plugin-visual-editor.
 
 [[plugins]]
-  package = "@netlify/builder"
+  package = "@netlify/plugin-visual-editor"

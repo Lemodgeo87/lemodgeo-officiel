@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemodgeo | Hypnose & Conscience – L'Art de l'Autonomie Intérieure à Meung-sur-Loire</title>
+    <meta name="description" content="Hypnose Éricksonienne et PNL à Meung-sur-Loire. Retrouvez l'autonomie face au stress, aux peurs et aux comportements limitants.">
+
+    <script src="https://cdn.builder.io/js/cdn?apiKey=VOTRE_BUILDER_API_KEY"></script>
+    
+    <style>
+        /* ------------------------------
+           PALETTE & STYLE GLOBAL
+        ------------------------------ */
+
+        :root {
+            --bleu-nuit: #0d1b2a;
+            --or-pastel: #d4c495;
+            --blanc: #ffffff;
+            --gris: #f5f5f5;
+            --taupe: #3a4750;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--blanc);
+            color: var(--taupe);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a { color: var(--or-pastel); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: var(--bleu-nuit); }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ------------------------------
+           HEADER & NAV
+        ------------------------------ */
+        header {
+            background: var(--bleu-nuit);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        nav a {
+            color: var(--blanc);
+            margin-left: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        nav a:hover { color: var(--or-pastel); }
+
+        /* ------------------------------
+           HERO
+        ------------------------------ */
+
+        .hero {
+            padding: 120px 20px;
+            background: linear-gradient(135deg, var(--bleu-nuit) 0%, var(--taupe) 100%);
+            color: var(--blanc);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 800;
+            color: var(--or-pastel);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--or-pastel);
+            color: var(--bleu-nuit);
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            background: #e0d0a5;
+        }
+
+        /* ------------------------------
+           SECTIONS GENERALES
+        ------------------------------ */
+
+        section {
+            padding: 80px 20px;
+        }
+
+        #apropos, #tarifs {
+            background: var(--gris);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--taupe);
+            border-bottom: 3px solid var(--or-pastel);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* ------------------------------
+           SECTION A PROPOS
+        ------------------------------ */
+
+        #apropos .content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        #apropos img {
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        #apropos .text {
+            flex-grow: 1;
+        }
+        
+        /* ------------------------------
+           SECTION SERVICES
+        ------------------------------ */
+
+        #services {
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: var(--blanc);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            border-top: 5px solid var(--or-pastel);
+        }
+        
+        .service-card h3 {
+            color: var(--bleu-nuit);
+            font-size: 1.4rem;
+        }
+
+        /* ------------------------------
+           SECTION TARIFS
+        ------------------------------ */
+
+        .tarifs-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .tarif-card {
+            background: var(--blanc);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+            border: 1px solid var(--or-pastel);
+        }
+
+        .tarif-card h3 {
+            font-size: 1.8rem;
+            color: var(--or-pastel);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--gris);
+            padding-bottom: 10px;
+        }
+
+        .tarif-card .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--bleu-nuit);
+            margin-bottom: 20px;
+        }
+
+        /* ------------------------------
+           FOOTER
+        ------------------------------ */
+
+        footer {
+            background: var(--bleu-nuit);
+            color: var(--gris);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        footer a { color: var(--or-pastel); margin: 0 10px; }
+
+        .legal-info {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* ------------------------------
+           RESPONSIVE
+        ------------------------------ */
+
+        @media (max-width: 800px) {
+            .hero h1 { font-size: 2.5rem; }
+            .header-content, #apropos .content { flex-direction: column; text-align: center; }
+            nav a { margin: 0 10px; display: inline-block; margin-top: 10px; }
+            #apropos img { margin-bottom: 20px; }
+            .tarifs-grid { flex-direction: column; align-items: center; }
+            .tarif-card { width: 90%; max-width: 400px; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header id="hero">
+    <div class="container header-content">
+        <a href="#hero" class="logo">
+            <img src="images/logo-simple.png" alt="Logo Lemodgeo Hypnose" data-netlify-field="logo">
+        </a>
+        <nav>
+            <a href="#apropos" data-netlify-field="nav-apropos">Mon Approche</a>
+            <a href="#services" data-netlify-field="nav-services">Services</a>
+            <a href="#tarifs" data-netlify-field="nav-tarifs">Tarifs</a>
+            <a href="#contact" class="btn" data-netlify-field="nav-rdv">Prendre RDV</a>
+        </nav>
+    </div>
+</header>
+
+<div class="hero">
+    <div class="container">
+        <h1 data-netlify-field="hero-title">Lemodgeo – Quand les maux trouvent sens</h1>
+        <p data-netlify-field="hero-subtitle">
+            Bienvenue dans votre espace d'hypnose sur mesure à Meung-sur-Loire. Nous explorons ensemble ce qui vous anime pour retrouver l'autonomie, la conscience, et le plaisir d'être vous.
+        </p>
+        <a href="LIEN_VERS_CALENDLY" class="btn" data-netlify-field="hero-btn-text">Commencer mon chemin</a>
+    </div>
+</div>
+
+<section id="apropos" class="container">
+    <h2 data-netlify-field="apropos-title">Mon Chemin : De l'Émerveillement à l'Autonomie</h2>
+    <div class="content">
+        <img src="images/geoffrey-photo.jpg" alt="Photo de Geoffrey Hypnothérapeute Lemodgeo" data-netlify-field="apropos-image">
+        <div class="text">
+            <p data-netlify-field="apropos-p1">
+                Mon histoire avec la conscience a commencé par une "magie" d'enfant : mes doigts collés chez ma gardienne. Cet **émerveillement** initial a créé chez moi une curiosité insatiable pour le **fonctionnement de l'humain**. Mon parcours professionnel, centré sur le bien-être animal, m'a appris l'importance cruciale de l'**observation attentive et de la bienveillance**. C'est cette expertise que j'ai voulu transposer : aider mes "confrères" à se comprendre pour mieux vivre.
+            </p>
+            <p data-netlify-field="apropos-p2">
+                L'hypnose s'est révélée être une **discipline ancestrale et un art de la conscience**. Mon message est simple : l'hypnose n'est **PAS de la magie**, c'est un **outil** avec lequel nous venons au monde. Si vous ne deviez retenir qu'une chose de mon travail : votre inconscient n'est pas un mystère ou une force obscure, c'est votre **meilleur partenaire de jeu**. Apprenons à jouer ensemble !
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="container">
+    <h2 data-netlify-field="services-title">Ce que nous allons transformer ensemble</h2>
+    <div class="services-grid">
+        
+        <div class="service-card" data-netlify-field="service-1-card">
+            <h3 data-netlify-field="service-1-title">Gérer le stress & l'anxiété</h3>
+            <p data-netlify-field="service-1-description">L'hypnose permet de réguler le système nerveux pour retrouver un calme intérieur.</p>
+            <ul>
+                <li data-netlify-field="service-1-list-1">Retrouver le calme face à la pression.</li>
+                <li data-netlify-field="service-1-list-2">Transformer l'anxiété en énergie positive.</li>
+                <li data-netlify-field="service-1-list-3">Mieux dormir et se régénérer.</li>
+            </ul>
+        </div>
+        
+        <div class="service-card" data-netlify-field="service-2-card">
+            <h3 data-netlify-field="service-2-title">Changer un comportement limitant</h3>
+            <p data-netlify-field="service-2-description">Défaites les habitudes non désirées en comprenant leur message inconscient.</p>
+            <ul>
+                <li data-netlify-field="service-2-list-1">Arrêt du tabac (forfait spécifique).</li>
+                <li data-netlify-field="service-2-list-2">Gestion des compulsions et du poids.</li>
+                <li data-netlify-field="service-2-list-3">Surmonter les phobies et les peurs.</li>
+            </ul>
+        </div>
+
+        <div class="service-card" data-netlify-field="service-3-card">
+            <h3 data-netlify-field="service-3-title">Renforcer l'estime de soi</h3>
+            <p data-netlify-field="service-3-description">Reconnectez-vous à vos ressources profondes pour vous affirmer et vous épanouir pleinement.</p>
+            <ul>
+                <li data-netlify-field="service-3-list-1">Améliorer la confiance en soi.</li>
+                <li data-netlify-field="service-3-list-2">Se libérer du syndrome de l'imposteur.</li>
+                <li data-netlify-field="service-3-list-3">Préparation mentale (examens, sport).</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section id="tarifs">
+    <div class="container">
+        <h2 data-netlify-field="tarifs-title">Tarifs & Options d'Accompagnement</h2>
+        <div class="tarifs-grid">
+            
+            <div class="tarif-card" data-netlify-field="tarif-1-card">
+                <h3 data-netlify-field="tarif-1-title">Séance Individuelle</h3>
+                <div class="price" data-netlify-field="tarif-1-price">70€</div>
+                <p data-netlify-field="tarif-1-description">Pour la plupart des accompagnements. Durée : environ 1h à 1h15.</p>
+                <a href="LIEN_VERS_CALENDLY" class="btn" data-netlify-field="tarif-1-btn">Réserver une séance</a>
+            </div>
+
+            <div class="tarif-card" data-netlify-field="tarif-2-card">
+                <h3 data-netlify-field="tarif-2-title">Forfait Arrêt Tabac</h3>
+                <div class="price" data-netlify-field="tarif-2-price">150€</div>
+                <p data-netlify-field="tarif-2-description">Séance unique longue (jusqu'à 1h30). Suivi inclus pendant 6 mois.</p>
+                <a href="LIEN_VERS_CALENDLY" class="btn" data-netlify-field="tarif-2-btn">Je me libère</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="container">
+        <p data-netlify-field="footer-contact">
+            Contact : <a href="mailto:contact@lemodgeo.fr">contact@lemodgeo.fr</a> | Tel : 06 00 00 00 00 (sur RDV)
+        </p>
+        <div class="legal-info">
+            <p data-netlify-field="legal-info-1">
+                Entrepreneur Individuel (EI) | SIRET: 909 374 167 00015 | Meung-sur-Loire
+            </p>
+            <p data-netlify-field="legal-info-2">
+                © 2025 Lemodgeo Hypnose & Conscience. Tous droits réservés.
+            </p>
+            <p data-netlify-field="legal-info-3">
+                <a href="LIEN_VERS_MENTIONS_LEGALES" data-netlify-field="legal-link">Mentions Légales & Politique de Confidentialité</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Ce code JS n'est pas éditable par Builder, donc il est stable.
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

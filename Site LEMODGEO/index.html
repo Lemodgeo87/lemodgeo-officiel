@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lemodgeo | Hypnose & Conscience — L'Art de l'Autonomie Intérieure</title>
+  <meta name="description" content="Bienvenue chez Lemodgeo, votre espace d’hypnose sur mesure à Meung-sur-Loire. Ici, on avance ensemble pour mieux vous comprendre et vivre pleinement votre vie avec bienveillance et curiosité.">
+  <meta name="robots" content="index,follow">
+
+  <!-- Performance: préconnect + fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="images/logo-simple.png">
+
+  <!-- Schema.org JSON-LD - simple local business / practitioner -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lemodgeo",
+    "description": "Hypnose & Conscience — Accompagnement à Meung-sur-Loire",
+    "url": "https://www.lemodgeo.example",
+    "image": "https://www.lemodgeo.example/images/logo-simple.png",
+    "sameAs": []
+  }
+  </script>
+
+  <style>
+    /* =========================
+       CSS GLOBALS & VARIABLES (Le Style)
+       ========================= */
+    :root{
+        --brand-dark: #071936; 
+        --brand-gold: #D4AF37; 
+        --ivory: #f8f6f2;      
+        --muted: #6f7480; 
+        --card: #ffffff;
+        --maxw: 1100px;
+        --radius: 14px;
+        --shadow-soft: 0 8px 30px rgba(7,25,54,0.08); 
+        --transition: 320ms cubic-bezier(.2,.9,.3,1);
+    }
+
+    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        color: var(--brand-dark);
+        background-color: var(--ivory);
+        line-height: 1.6;
+        margin: 0;
+        padding-top: 80px; /* espace nav */
+    }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; margin-top: 0; }
+    h2.section-title { text-align: center; font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 40px; color: var(--brand-dark); }
+
+    a { color: var(--brand-gold); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--brand-dark); }
+
+    section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+    .btn { display: inline-block; padding: 14px 30px; border-radius: var(--radius); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; transition: all var(--transition); text-align: center; }
+    .btn-primary { background: var(--brand-gold); color: white; border: 2px solid var(--brand-gold); }
+    .btn-primary:hover { background: var(--brand-dark); color: white; border-color: var(--brand-dark); }
+    .btn-secondary { background: transparent; color: var(--brand-dark); border: 2px solid var(--brand-dark); }
+    .btn-secondary:hover { background: var(--brand-dark); color: white; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; width: 100%; background-color: transparent; padding: 15px 0; z-index: 1000; box-shadow: none; transition: background-color var(--transition), box-shadow var(--transition); }
+    nav.visible { background-color: var(--card); box-shadow: var(--shadow-soft); }
+    .nav-content { display:flex; justify-content:space-between; align-items:center; max-width:var(--maxw); margin:0 auto; padding:0 20px; }
+    .nav-logo { display:flex; align-items:center; gap:12px; position:relative; }
+    .nav-logo img { height:40px; display:block; transition:opacity var(--transition), transform var(--transition); }
+    /* two logos technique */
+    nav:not(.visible) .nav-logo img.logo-dark { opacity: 0; transform: translateY(-4px); }
+    nav.visible .nav-logo img.logo-light { opacity: 0; position: absolute; }
+
+    .nav-links { display:flex; gap:30px; }
+    .nav-links a { font-weight:500; color:var(--brand-dark); padding:5px 0; position:relative; }
+    .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background-color:var(--brand-gold); transition:width 0.3s ease; }
+    .nav-links a:hover::after { width:100%; }
+
+    .hamburger { display:none; background:none; border:none; cursor:pointer; padding:10px; z-index:1001; color:var(--brand-dark); font-size:24px; }
+    #mobile-menu { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:var(--card); padding-top:80px; z-index:999; text-align:center; overflow:auto; }
+    #mobile-menu a { display:block; padding:15px; font-size:1.5rem; font-weight:600; color:var(--brand-dark); }
+
+    @media (max-width: 900px) {
+        .nav-links { display:none; }
+        .hamburger { display:block; }
+        nav:not(.visible) .nav-logo img.logo-dark { opacity: 1; }
+        nav.visible .nav-logo img.logo-light { opacity: 1; position:static; }
+    }
+
+    /* HERO */
+    #hero { position:relative; background-image: url('images/hero-ambiance.jpg'); background-size:cover; background-position:center 30%; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.4); padding: 120px 20px 80px; }
+    #hero::before { content: ''; position:absolute; inset:0; background: linear-gradient(rgba(7,25,54,0.45), rgba(7,25,54,0.25)); pointer-events:none; }
+    .hero-content{ position:relative; z-index:2; max-width:800px; margin:0 auto; }
+    .brand { font-size: clamp(3rem, 8vw, 5rem); margin-bottom:5px; color: white; }
+    .tagline { font-size: clamp(1.5rem,4vw,2.2rem); font-family:'Playfair Display', serif; color: var(--brand-gold); margin-top:0; font-weight:400; }
+    .lead { font-size:1.25rem; margin-bottom:40px; line-height:1.8; color: rgba(255,255,255,0.95); }
+    .hero-actions .btn { margin:10px; min-width:200px; }
+    .hero-actions .btn-primary { background:var(--brand-gold); color:var(--brand-dark); }
+    .hero-actions .btn-primary:hover { background:white; border-color:white; }
+    .hero-actions .btn-secondary { background: rgba(255,255,255,0.12); color: white; border-color: white; }
+
+    /* APROPOS */
+    #apropos { background-color: var(--card); }
+    .apropos-grid { display:grid; grid-template-columns: 1fr 2fr; gap:60px; align-items:flex-start; max-width:var(--maxw); margin:0 auto; }
+    .apropos-img-wrapper { text-align:center; position:sticky; top:100px; }
+    .apropos-img { width:100%; max-width:300px; height:auto; border-radius:50%; box-shadow:var(--shadow-soft); object-fit:cover; }
+    .apropos-content p { margin-bottom:20px; font-size:1.1rem; color:#333; }
+
+    .about-highlight { background-color:#f0f4f9; padding:25px; border-radius:var(--radius); margin:30px 0; border-left:5px solid var(--brand-gold); }
+    .about-highlight p { font-style:italic; font-size:1.05rem; color:var(--brand-dark); margin:0; }
+
+    .value-cards { display:flex; gap:20px; margin-top:40px; text-align:center; }
+    .value-card { flex:1; padding:20px; background-color:var(--ivory); border-radius:var(--radius); border:1px solid #e7e7e7; }
+    .value-card h3 { color:var(--brand-gold); font-size:1.3rem; margin-bottom:5px; }
+    .value-card p { font-size:0.95rem; color:var(--muted); margin:0; }
+
+    @media (max-width:900px) { .apropos-grid { grid-template-columns:1fr; gap:40px; } .apropos-img-wrapper { position:static; order:-1; } .value-cards { flex-direction:column; } }
+
+    /* SERVICES */
+    #accompagnements { background-color: var(--ivory); }
+    .services-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:30px; max-width:var(--maxw); margin:0 auto; }
+    .service-card { background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow-soft); overflow:hidden; display:flex; flex-direction:column; transition: transform var(--transition); }
+    .service-card:hover { transform: translateY(-5px); }
+    .service-card img { width:100%; height:200px; object-fit:cover; }
+
+    /* DEROULEMENT */
+    #deroulement { background-color: var(--card); }
+    .deroulement-steps { max-width:800px; margin:0 auto; position:relative; }
+    .deroulement-item { display:flex; align-items:flex-start; margin-bottom:40px; position:relative; }
+    .deroulement-number { flex-shrink:0; width:40px; height:40px; background:var(--brand-gold); color:white; border-radius:50%; display:flex; justify-content:center; align-items:center; font-weight:700; font-size:1.2rem; margin-right:20px; z-index:10; }
+    .deroulement-content h3 { color:var(--brand-dark); font-size:1.4rem; margin-bottom:5px; }
+    .deroulement-content p { color:var(--muted); margin:0; }
+    .deroulement-steps::before { content:''; position:absolute; left:20px; top:0; bottom:0; width:2px; background-color:var(--ivory); }
+    @media (max-width:600px) { .deroulement-steps::before { left:20px; } .deroulement-number { margin-right:15px; } }
+
+    /* TEMOIGNAGES */
+    #temoignages { background-color: var(--ivory); padding:80px 20px; }
+    .temoignages-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:25px; max-width:var(--maxw); margin:0 auto; }
+    .temoignage-card { background:var(--card); padding:25px; border-radius:var(--radius); box-shadow:var(--shadow-soft); display:flex; flex-direction:column; }
+    .temoignage-text { font-style:italic; margin-bottom:15px; flex-grow:1; position:relative; }
+    .temoignage-text::before { content:'“'; font-size:3rem; color:var(--brand-gold); line-height:1; position:absolute; top:-15px; left:-10px; opacity:0.6; }
+
+    /* FAQ */
+    #faq { background-color: var(--card); }
+    .faq-wrapper { max-width:800px; margin:0 auto; }
+    .faq-question { background:var(--ivory); padding:20px; border-radius:var(--radius); margin-bottom:10px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-weight:600; color:var(--brand-dark); transition: background-color var(--transition); border:1px solid #e7e7e7; }
+    .faq-question:hover, .faq-question[aria-expanded="true"] { background-color:#f2f6fa; color:var(--brand-gold); }
+    .faq-toggle { font-size:1.5rem; font-weight:300; transition: transform 0.3s; color:var(--brand-dark); }
+    .faq-answer { max-height:0; overflow:hidden; transition: max-height 0.4s ease-in-out; padding:0 20px; background-color:white; border-radius:0 0 var(--radius) var(--radius); color:var(--muted); }
+    .faq-answer.active { max-height:500px; padding:15px 20px 20px; border-bottom:1px solid #e7e7e7; }
+
+    /* QUIZ */
+    .quiz-section { padding:40px 20px; background:var(--card); border-radius:var(--radius); margin:40px auto; max-width:680px; box-shadow:var(--shadow-soft); border:1px solid #f0f0f0; }
+    .quiz-title { text-align:center; margin-bottom:6px; font-size:26px; color:var(--brand-dark); font-family:'Playfair Display', serif; }
+    .quiz-subtitle { text-align:center; margin-bottom:30px; font-size:1.05rem; color:var(--muted); }
+    .quiz-step { display:none; }
+    .quiz-step.active { display:block; }
+    .quiz-step label { display:block; margin-bottom:12px; font-weight:700; color:var(--brand-dark); font-size:1.1rem; }
+    .quiz-step textarea { width:100%; min-height:140px; padding:14px; border-radius:12px; border:2px solid #e6e7ea; outline:none; resize:vertical; font-size:1rem; color:var(--brand-dark); transition: border-color var(--transition); }
+    .quiz-step textarea:focus { border-color:var(--brand-gold); box-shadow: 0 0 0 3px rgba(212,175,55,0.12); }
+    .quiz-btn { display:block; width:100%; margin-top:20px; background:var(--brand-gold); color:white; padding:14px 20px; border-radius:12px; border:none; font-size:1.1rem; font-weight:700; cursor:pointer; transition: background-color var(--transition); }
+    .quiz-btn:hover { background:#c79f33; }
+    .quiz-result { display:none; text-align:center; padding:30px 0; border-top:2px dashed #f0e9df; margin-top:20px; }
+    .quiz-result.visible { display:block; }
+    .quiz-result h3 { font-family:'Playfair Display', serif; color:var(--brand-dark); font-size:28px; margin-bottom:8px; }
+
+    /* TARIFS */
+    #tarifs { background-color: var(--ivory); }
+    .tarifs-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:30px; max-width:var(--maxw); margin:0 auto; }
+    .tarif-card { background:var(--card); padding:30px; border-radius:var(--radius); box-shadow:var(--shadow-soft); text-align:center; transition: transform var(--transition), border-color var(--transition); border:2px solid transparent; }
+    .tarif-card.featured { border-color:var(--brand-gold); transform:translateY(-5px); }
+
+    /* CONTACT */
+    #contact { background-color: var(--card); }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:50px; max-width:var(--maxw); margin:0 auto; align-items:flex-start; }
+    .contact-info h3 { color:var(--brand-dark); font-size:1.5rem; margin-bottom:20px; border-bottom:2px solid var(--brand-gold); display:inline-block; padding-bottom:5px; }
+    .contact-detail { margin-bottom:15px; color:var(--muted); }
+    .contact-detail strong { display:block; color:var(--brand-dark); font-weight:600; }
+    .contact-form { padding:30px; background:var(--ivory); border-radius:var(--radius); }
+    .contact-form label { display:block; margin-bottom:8px; font-weight:600; color:var(--brand-dark); }
+    .contact-form input, .contact-form textarea { width:100%; padding:12px 14px; border-radius:10px; border:1px solid #e6e7ea; font-size:1rem; }
+    .contact-form button { margin-top:12px; }
+
+    footer { padding:30px 20px; text-align:center; color:var(--muted); }
+
+  </style>
+</head>
+<body>
+
+  <nav aria-label="Navigation principale">
+    <div class="nav-content container">
+      <div class="nav-logo">
+        <!-- Deux logos : logo-dark (petit) et logo-light pour contraste, inclure alt -->
+        <a href="#hero" aria-label="Accueil">
+          <img src="images/logo-dark.png" alt="Logo Lemodgeo - sombre" class="logo-dark">
+          <img src="images/logo-light.png" alt="Logo Lemodgeo - clair" class="logo-light">
+        </a>
+      </div>
+
+      <div class="nav-links" role="menubar">
+        <a href="#apropos" role="menuitem">À propos</a>
+        <a href="#accompagnements" role="menuitem">Accompagnements</a>
+        <a href="#tarifs" role="menuitem">Tarifs</a>
+        <a href="#contact" role="menuitem">Contact</a>
+      </div>
+
+      <button class="hamburger" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu mobile">☰</button>
+    </div>
+
+    <div id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
+      <button id="mobile-close" aria-label="Fermer le menu" style="position:absolute; right:16px; top:18px; font-size:22px; background:none; border:none;">✕</button>
+      <nav style="padding:30px 10px;">
+        <a href="#hero">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#accompagnements">Accompagnements</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </nav>
+
+  <main>
+    <header id="hero">
+      <div class="hero-content">
+        <h1 class="brand">Lemodgeo</h1>
+        <p class="tagline">Hypnose & Conscience — L'Art de l'Autonomie Intérieure</p>
+        <p class="lead">Bienvenue chez Lemodgeo, votre espace d’hypnose sur mesure à Meung-sur-Loire. Ici, on avance ensemble pour mieux vous comprendre et vivre pleinement votre vie.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Prendre rendez-vous</a>
+          <a class="btn btn-secondary" href="#apropos">En savoir plus</a>
+        </div>
+      </div>
+    </header>
+
+    <section id="apropos" aria-labelledby="apropos-title">
+      <h2 id="apropos-title" class="section-title">À propos</h2>
+      <div class="apropos-grid">
+        <div class="apropos-img-wrapper">
+          <img src="images/portrait.jpg" alt="Portrait de Lemodgeo" class="apropos-img">
+        </div>
+        <div class="apropos-content">
+          <p>Je vous accompagne avec bienveillance et curiosité pour explorer votre monde intérieur et retrouver plus de liberté.</p>
+
+          <div class="about-highlight">
+            <p>Mon approche combine hypnose et Harmonisation Globale pour un accompagnement sur-mesure.</p>
+          </div>
+
+          <div class="value-cards">
+            <div class="value-card"><h3>Écoute</h3><p>Accompagnement centré sur la personne.</p></div>
+            <div class="value-card"><h3>Clarté</h3><p>Objectifs précis et mesurables.</p></div>
+            <div class="value-card"><h3>Éthique</h3><p>Confidentialité et respect.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="accompagnements" aria-labelledby="acc-title">
+      <h2 id="acc-title" class="section-title">Accompagnements</h2>
+      <div class="services-grid">
+        <article class="service-card" aria-labelledby="svc1">
+          <img src="images/service-1.jpg" alt="Séance individuelle d'hypnose">
+          <div class="service-content">
+            <h3 id="svc1">Séances individuelles</h3>
+            <ul>
+              <li>Arrêt du tabac</li>
+              <li>Gestion du stress</li>
+              <li>Confiance en soi</li>
+            </ul>
+          </div>
+          <div class="service-actions">
+            <a class="btn btn-secondary" href="#contact">Réserver</a>
+          </div>
+        </article>
+
+        <article class="service-card" aria-labelledby="svc2">
+          <img src="images/service-2.jpg" alt="Atelier collectif d'hypnose de rue">
+          <div class="service-content">
+            <h3 id="svc2">Ateliers & Formations</h3>
+            <ul>
+              <li>Hypnose de rue</li>
+              <li>Initiation pratique</li>
+              <li>Mise en situation</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="deroulement" aria-labelledby="der-title">
+      <h2 id="der-title" class="section-title">Déroulement typique d'une séance</h2>
+      <div class="deroulement-steps">
+        <div class="deroulement-item">
+          <div class="deroulement-number">1</div>
+          <div class="deroulement-content">
+            <h3>Accueil & Anamnèse</h3>
+            <p>Écoute des besoins et définition d'objectifs.</p>
+          </div>
+        </div>
+        <div class="deroulement-item">
+          <div class="deroulement-number">2</div>
+          <div class="deroulement-content">
+            <h3>Induction</h3>
+            <p>Mise en confiance et induction adaptée.</p>
+          </div>
+        </div>
+        <div class="deroulement-item">
+          <div class="deroulement-number">3</div>
+          <div class="deroulement-content">
+            <h3>Suggestions & Sortie</h3>
+            <p>Suggestions adaptées et sortie progressive.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="temoignages" aria-labelledby="tem-title">
+      <h2 id="tem-title" class="section-title">Témoignages</h2>
+      <div class="temoignages-grid">
+        <div class="temoignage-card">
+          <div class="temoignage-text">Séance très apaisante, résultats au-delà de mes attentes.</div>
+          <div class="temoignage-author">— Alice <small>Client·e</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="section-title">FAQ</h2>
+      <div class="faq-wrapper">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+          <span>Combien de séances sont nécessaires ?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>La durée dépend des objectifs. En général 3 à 6 séances pour des objectifs courts.</p>
+        </div>
+
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+          <span>Est-ce que l'hypnose est dangereuse ?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Non, l'hypnose est un état naturel ; les séances sont encadrées et sécurisées.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-section" aria-labelledby="quiz-title">
+      <h3 id="quiz-title" class="quiz-title">Exploration rapide</h3>
+      <p class="quiz-subtitle">Répondez librement — cela me permettra de mieux vous accompagner.</p>
+
+      <form id="quiz-form" class="quiz-form" onsubmit="return false;">
+        <div class="quiz-step active" data-step="1">
+          <label for="q1">Quel est votre objectif principal ?</label>
+          <textarea id="q1" name="q1" required></textarea>
+          <button type="button" class="quiz-btn" data-action="next">Suivant</button>
+        </div>
+
+        <div class="quiz-step" data-step="2">
+          <label for="q2">Depuis combien de temps ?</label>
+          <textarea id="q2" name="q2"></textarea>
+          <button type="button" class="quiz-btn" data-action="next">Suivant</button>
+        </div>
+
+        <div class="quiz-step" data-step="3">
+          <label for="q3">Qu'aimeriez-vous obtenir au terme des séances ?</label>
+          <textarea id="q3" name="q3"></textarea>
+          <button type="button" class="quiz-btn" data-action="finish">Terminer</button>
+        </div>
+
+        <div class="quiz-result" id="quiz-result" aria-live="polite">
+          <h3>Merci — vos réponses ont été préparées.</h3>
+          <p>Vous pouvez maintenant nous contacter pour planifier une séance.</p>
+        </div>
+      </form>
+    </section>
+
+    <section id="tarifs" aria-labelledby="tarifs-title">
+      <h2 id="tarifs-title" class="section-title">Tarifs</h2>
+      <div class="tarifs-grid">
+        <div class="tarif-card">
+          <h3>Séance classique</h3>
+          <span class="price">60€ <small>/ séance</small></span>
+          <ul class="tarif-features">
+            <li>Entretien préalable</li>
+            <li>Séance de 60 min</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Réserver</a>
+        </div>
+
+        <div class="tarif-card featured">
+          <h3>Pack découverte</h3>
+          <span class="price">160€ <small>/ 3 séances</small></span>
+          <ul class="tarif-features">
+            <li>Suivi personnalisé</li>
+            <li>Supports fournis</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Choisir</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Prendre rendez-vous</h3>
+          <div class="contact-detail"><strong>Adresse</strong> Meung-sur-Loire (Loiret)</div>
+          <div class="contact-detail"><strong>Téléphone</strong> <a href="tel:+33000000000">+33 0 00 00 00 00</a></div>
+          <div class="contact-detail"><strong>Email</strong> <a href="mailto:contact@lemodgeo.example">contact@lemodgeo.example</a></div>
+        </div>
+
+        <form class="contact-form" id="contact-form" action="/contact" method="post" novalidate>
+          <label for="name">Nom</label>
+          <input id="name" name="name" type="text" required aria-required="true">
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required aria-required="true">
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+
+          <button class="btn btn-primary" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> Lemodgeo — Tous droits réservés.</small>
+  </footer>
+
+  <noscript>
+    <div style="background:#fff3cd;padding:12px;border-radius:8px;margin:16px;">JavaScript est désactivé — certaines interactions (menu, FAQ, quiz) ne fonctionneront pas.</div>
+  </noscript>
+
+  <script>
+    // Small utility selectors
+    const $ = (sel, ctx = document) => ctx.querySelector(sel);
+    const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+
+    // NAV - toggle visible on scroll
+    (function navScroll(){
+      const nav = document.querySelector('nav');
+      const onScroll = () => nav.classList.toggle('visible', window.scrollY > 50);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // MOBILE MENU
+    (function mobileMenu(){
+      const hamb = $('.hamburger');
+      const mobile = $('#mobile-menu');
+      const closeBtn = $('#mobile-close');
+
+      const open = () => {
+        mobile.style.display = 'block';
+        mobile.setAttribute('aria-hidden','false');
+        hamb.setAttribute('aria-expanded','true');
+      };
+      const close = () => {
+        mobile.style.display = 'none';
+        mobile.setAttribute('aria-hidden','true');
+        hamb.setAttribute('aria-expanded','false');
+      };
+
+      hamb.addEventListener('click', () => (mobile.style.display === 'block') ? close() : open());
+      closeBtn.addEventListener('click', close);
+      // close on link click
+      $$('#mobile-menu a').forEach(a => a.addEventListener('click', close));
+    })();
+
+    // FAQ toggles
+    (function faq(){
+      $$('.faq-question').forEach(q => {
+        const ans = q.nextElementSibling;
+        const toggle = () => {
+          const expanded = q.getAttribute('aria-expanded') === 'true';
+          q.setAttribute('aria-expanded', String(!expanded));
+          q.classList.toggle('open');
+          ans.classList.toggle('active');
+        };
+        q.addEventListener('click', toggle);
+        q.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+      });
+    })();
+
+    // QUIZ logic: simple multi-step
+    (function quiz(){
+      const steps = $$('.quiz-step');
+      const result = $('#quiz-result');
+
+      function showStep(index){
+        steps.forEach((s,i)=> s.classList.toggle('active', i === index));
+      }
+
+      $$('.quiz-btn').forEach(btn => btn.addEventListener('click', (e)=>{
+        const action = e.currentTarget.dataset.action;
+        const current = steps.findIndex(s => s.classList.contains('active'));
+        if(action === 'next') showStep(Math.min(steps.length-1, current+1));
+        if(action === 'finish'){
+          // basic validation could go here
+          showStep(steps.length-1); // hide all
+          steps.forEach(s => s.classList.remove('active'));
+          result.classList.add('visible');
+          // prépare un envoi asynchrone si désiré (fetch)
+        }
+      }));
+    })();
+
+    // Contact form rudimentaire (prévenir double envoi + basic client-side validation)
+    (function contact(){
+      const form = $('#contact-form');
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Envoi…';
+        // Ici, tu peux faire un fetch() vers ton endpoint serveur
+        setTimeout(()=>{ btn.disabled=false; btn.textContent='Envoyer'; alert('Merci — votre message a été envoyé (simulation).'); form.reset(); }, 800);
+      });
+    })();
+
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

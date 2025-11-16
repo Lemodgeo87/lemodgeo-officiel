@@ -1,3 +1,6 @@
 [build]
   publish = "/"
-  command = "echo 'Build successful'" 
+  command = ""
+
+[[plugins]]
+  package = "@netlify/builder"

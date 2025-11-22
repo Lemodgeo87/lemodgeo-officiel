@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lemodgeo | Hypnose & inconscient - Geoffrey Celerier</title>
-    <meta name="description" content="Hypnose pédagogique à Meung-sur-Loire. Transformez vos limites pour une liberté intérieure durable. Arrêt tabac, stress, confiance en soi.">
+    <title>Lemodgeo | Hypnose & Inconscient à Meung-sur-Loire - Geoffrey Celerier</title>
+    <meta name="description" content="Cabinet d'hypnose pédagogique à Meung-sur-Loire (Proche Orléans). Geoffrey Celerier vous accompagne : Arrêt tabac, gestion du stress, confiance en soi. Une approche par le jeu et la curiosité pour une liberté durable.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* ===== CHARTE GRAPHIQUE PREMIUM ===== */
+        /* ===== CHARTE GRAPHIQUE ÉLÉGANTE & LUDIQUE ===== */
         :root {
-            --bleu-nuit: #0d1b2a;
-            --bleu-moyen: #1a2c41;
+            /* Ajustement des bleus pour plus de luminosité et de profondeur */
+            --bleu-nuit: #132a44; /* Plus bleu, moins noir */
+            --bleu-moyen: #1f3b5c; /* Éclairci pour le contraste */
             --dorado: #d4c495;
             --dorado-hover: #e6d7b2;
-            --blanc-ivoire: #fcfcfc;
+            --blanc-ivoire: #f8f9fa;
             --font-titre: 'Playfair Display', serif;
             --font-corps: 'Inter', sans-serif;
         }
@@ -37,158 +38,223 @@
         a { color: var(--blanc-ivoire); text-decoration: none; transition: color 0.3s; }
         a:hover { color: var(--dorado); }
 
-        /* ===== HEADER ===== */
+        /* ===== HEADER SMART ===== */
         header {
-            background: rgba(13, 27, 42, 0.95);
+            background: rgba(19, 42, 68, 0.95); /* Basé sur le nouveau bleu */
             padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
             top: 0; width: 100%; z-index: 1000;
-            border-bottom: 1px solid var(--bleu-moyen);
+            border-bottom: 1px solid rgba(212, 196, 149, 0.1);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, background 0.3s ease;
         }
         header img { height: 45px; } 
         
         nav { display: flex; align-items: center; gap: 25px; }
-        nav a { font-size: 0.95rem; font-weight: 500; border-bottom: 2px solid transparent; transition: all 0.3s; }
-        nav a:hover { border-bottom-color: var(--dorado); }
+        nav a { font-size: 0.95rem; font-weight: 500; position: relative; }
+        nav a::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -5px; left: 0; background-color: var(--dorado);
+            transition: width 0.3s;
+        }
+        nav a:hover::after { width: 100%; }
+        
         .nav-cta {
             background: var(--dorado); color: var(--bleu-nuit); padding: 10px 20px;
-            border-radius: 6px; font-weight: 600; border-bottom: none !important;
+            border-radius: 6px; font-weight: 600;
         }
         .nav-cta:hover { background: var(--dorado-hover); color: var(--bleu-nuit); }
+        .nav-cta::after { display: none; }
 
-        /* ===== HERO PREMIUM ===== */
+        /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
-            /* UTILISE LE NOM LOGIQUE: hero-background.jpg */
-            background: linear-gradient(135deg, rgba(13, 27, 42, 0.85) 0%, rgba(26, 44, 65, 0.9) 100%), url('images/hero-background.jpg');
+            /* Gradient ajusté pour être plus lumineux */
+            background: linear-gradient(135deg, rgba(19, 42, 68, 0.8) 0%, rgba(31, 59, 92, 0.9) 100%), url('images/hero-background.jpg');
             background-size: cover; background-position: center; background-attachment: fixed;
             display: flex; align-items: center; justify-content: center; text-align: center;
             padding: 140px 40px 80px; position: relative; overflow: hidden;
         }
+        /* Cercle décoratif subtil */
         .hero::before {
-            content: ''; position: absolute; width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(212, 196, 149, 0.1) 0%, transparent 70%);
-            border-radius: 50%; animation: float 8s ease-in-out infinite;
-            top: 10%; left: 5%; z-index: 0;
+            content: ''; position: absolute; width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(212, 196, 149, 0.08) 0%, transparent 70%);
+            border-radius: 50%; animation: float 10s ease-in-out infinite;
+            top: -10%; right: -10%; z-index: 0;
         }
         @keyframes float {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-40px) scale(1.1); }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-30px, 40px) scale(1.05); }
         }
         .hero-content { position: relative; z-index: 1; max-width: 900px; }
-        .hero-logo { max-width: 300px; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(212, 196, 149, 0.3)); }
+        .hero-logo { max-width: 380px; margin-bottom: 30px; filter: drop-shadow(0 0 15px rgba(212, 196, 149, 0.2)); }
         .hero h1 {
-            font-family: var(--font-titre); font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700; margin-bottom: 10px; text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+            font-family: var(--font-titre); font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 800; margin-bottom: 10px; letter-spacing: -1px;
         }
         .tagline {
-            font-size: 1.5rem; color: var(--dorado); font-style: italic; margin-bottom: 30px;
+            font-size: 1.6rem; color: var(--dorado); font-family: var(--font-titre); font-style: italic; margin-bottom: 40px;
         }
-        .hero p { font-size: 1.2rem; margin-bottom: 40px; max-width: 750px; margin-left: auto; margin-right: auto; }
         
+        .hero-intro-box {
+            background: rgba(19, 42, 68, 0.5); padding: 30px; border-radius: 12px; 
+            margin-bottom: 30px; backdrop-filter: blur(8px); border: 1px solid rgba(212, 196, 149, 0.2);
+        }
+
         .cta-button {
             display: inline-block; background: var(--dorado); color: var(--bleu-nuit);
-            font-weight: 700; padding: 16px 40px; border-radius: 8px;
-            text-transform: uppercase; letter-spacing: 0.5px;
-            box-shadow: 0 6px 20px rgba(212, 196, 149, 0.4); transition: all 0.3s;
+            font-weight: 700; padding: 16px 40px; border-radius: 50px;
+            text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;
+            box-shadow: 0 6px 20px rgba(212, 196, 149, 0.3); transition: all 0.3s;
         }
-        .cta-button:hover { transform: translateY(-3px); background: var(--dorado-hover); }
+        .cta-button:hover { transform: translateY(-3px); background: var(--dorado-hover); box-shadow: 0 10px 25px rgba(212, 196, 149, 0.4); }
 
         /* ===== SECTIONS GÉNÉRALES ===== */
-        section { padding: 90px 40px; max-width: 1200px; margin: 0 auto; }
+        section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
         section:nth-child(even) { background: var(--bleu-moyen); }
         
         h2 {
-            font-family: var(--font-titre); font-size: 2.8rem; text-align: center;
-            margin-bottom: 50px; color: var(--dorado);
+            font-family: var(--font-titre); font-size: 3rem; text-align: center;
+            margin-bottom: 20px; color: var(--dorado); font-weight: 700;
         }
-        .section-subtitle { text-align: center; font-style: italic; opacity: 0.8; margin-top: -40px; margin-bottom: 50px; }
+        .section-subtitle { text-align: center; font-size: 1.2rem; opacity: 0.8; margin-bottom: 60px; font-family: var(--font-titre); font-style: italic; }
 
         /* ===== GRIDS & CARDS ===== */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 
         .card {
-            background: var(--bleu-moyen); padding: 35px; border-radius: 12px;
-            border-top: 4px solid var(--dorado); box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-            transition: all 0.3s; text-align: center;
+            background: var(--bleu-moyen); padding: 40px 30px; border-radius: 16px;
+            border-top: 3px solid var(--dorado); box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s; text-align: center; height: 100%;
         }
         section:nth-child(even) .card { background: var(--bleu-nuit); }
-        .card:hover { transform: translateY(-8px); box-shadow: 0 12px 35px rgba(0,0,0,0.6); }
-        .card h3 { color: var(--blanc-ivoire); margin: 15px 0; }
-        .card p, .card ul { text-align: left; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
+        .card h3 { color: var(--blanc-ivoire); margin: 20px 0; font-size: 1.4rem; }
+        .card p { opacity: 0.9; }
+        .service-icon { height: 70px; margin-bottom: 15px; filter: drop-shadow(0 0 8px rgba(212, 196, 149, 0.3)); }
 
-        /* STYLE DES IMAGES D'ICÔNES */
-        .service-icon { 
-            height: 70px; 
-            margin-bottom: 15px; 
-            filter: drop-shadow(0 0 10px rgba(212, 196, 149, 0.3));
-        }
+        /* ===== ÉLÉMENTS SPÉCIFIQUES (Fusion des deux fichiers) ===== */
+        /* Témoignages */
+        .testimonial-card { font-style: italic; position: relative; }
+        .testimonial-card::before { content: '“'; font-size: 5rem; color: var(--dorado); opacity: 0.2; position: absolute; top: 10px; left: 20px; font-family: var(--font-titre); }
+        .testimonial-author { display: block; margin-top: 20px; color: var(--dorado); font-style: normal; font-weight: bold; font-size: 0.9rem; }
 
-        /* ===== SPECIFIC SECTIONS ===== */
-        .testimonial-card { font-style: italic; }
-        .testimonial-author { display: block; margin-top: 15px; color: var(--dorado); font-style: normal; font-weight: bold; }
-
-        .philosophy-card {
-            background: var(--bleu-nuit); border: 2px solid var(--dorado); padding: 30px;
-            border-radius: 12px; text-align: center; font-size: 1.2rem; font-style: italic; margin: 30px 0;
-        }
-
+        /* À Propos / Sur MOI */
         .apropos-img {
-            width: 100%; max-width: 300px; border-radius: 50%;
-            border: 6px solid var(--dorado); box-shadow: 0 0 0 15px rgba(212, 196, 149, 0.15);
+            width: 100%; max-width: 350px; border-radius: 20px;
+            border: 3px solid var(--dorado); box-shadow: 15px 15px 0px rgba(212, 196, 149, 0.1);
+        }
+        .philosophy-card {
+            background: transparent; border: 2px solid var(--dorado); padding: 25px;
+            border-radius: 12px; text-align: center; font-size: 1.3rem; 
+            font-family: var(--font-titre); font-style: italic; margin: 30px 0;
         }
 
-        .video-container {
-            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-            background: #000; border-radius: 8px; margin-bottom: 15px;
+        /* Valeurs */
+        .value-card { text-align: center; padding: 30px; }
+        .value-icon { font-size: 2.5rem; color: var(--dorado); margin-bottom: 20px; }
+
+        /* Harmonisation & Processus */
+        .secteurs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .secteur-card {
+            background: var(--bleu-nuit); padding: 20px; border-radius: 12px;
+            text-align: center; border: 1px solid rgba(212, 196, 149, 0.2); transition: 0.3s;
         }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .secteur-card:hover { border-color: var(--dorado); }
+        .secteur-icon { font-size: 2rem; color: var(--dorado); margin-bottom: 10px; }
+        
+        .process-step {
+            display: flex; gap: 20px; align-items: flex-start; background: var(--bleu-nuit);
+            padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 3px solid var(--dorado);
+        }
+        .step-number {
+            background: var(--dorado); color: var(--bleu-nuit); width: 40px; height: 40px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: bold; flex-shrink: 0;
+        }
+
+        /* Timeline Déroulement */
+        .timeline-item {
+            background: var(--bleu-moyen); padding: 30px; margin-bottom: 30px; border-radius: 16px;
+            position: relative; margin-left: 20px; border-left: 4px solid var(--dorado);
+        }
+        .timeline-number {
+            position: absolute; left: -24px; top: 25px;
+            background: var(--dorado); color: var(--bleu-nuit); width: 40px; height: 40px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 1.2rem; box-shadow: 0 0 0 5px var(--bleu-nuit);
+        }
+
+        /* FAQ */
+        .faq-item { background: var(--bleu-moyen); margin-bottom: 15px; border-radius: 12px; overflow: hidden; }
+        .faq-question {
+            padding: 25px; cursor: pointer; display: flex; justify-content: space-between;
+            align-items: center; font-weight: 600; font-size: 1.1rem; transition: 0.3s;
+        }
+        .faq-question:hover { background: rgba(212, 196, 149, 0.05); color: var(--dorado); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: 0.4s ease-in-out; padding: 0 25px; }
+        .faq-answer.active { max-height: 300px; padding-bottom: 25px; }
+        .faq-toggle { font-size: 1.5rem; color: var(--dorado); transition: 0.3s; }
+        .faq-toggle.active { transform: rotate(45deg); }
 
         /* ===== CONTACT & FOOTER ===== */
+        .contact-section { background: var(--dorado) !important; color: var(--bleu-nuit); }
+        .contact-section h2, .contact-section .section-subtitle { color: var(--bleu-nuit); }
         .contact-card {
-            background: var(--blanc-ivoire); color: var(--bleu-nuit); padding: 40px;
-            border-radius: 12px; text-align: center;
+            background: var(--blanc-ivoire); color: var(--bleu-nuit); padding: 50px;
+            border-radius: 20px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.2);
         }
         
-        footer { background: var(--bleu-nuit); padding: 50px 40px; text-align: center; border-top: 1px solid var(--bleu-moyen); }
-        .social-links a { font-size: 1.8rem; margin: 0 15px; }
+        footer { background: var(--bleu-nuit); padding: 60px 40px 30px; text-align: center; border-top: 1px solid rgba(212, 196, 149, 0.1); }
+        .social-links a { 
+            display: inline-flex; width: 45px; height: 45px; border-radius: 50%; 
+            background: var(--bleu-moyen); align-items: center; justify-content: center;
+            margin: 0 10px; transition: 0.3s; color: var(--dorado);
+        }
+        .social-links a:hover { background: var(--dorado); color: var(--bleu-nuit); transform: translateY(-3px); }
 
         /* ===== CHATBOT ===== */
         #chatbot-container {
-            position: fixed; bottom: 90px; right: 25px; width: 350px;
-            background: var(--bleu-nuit); border: 2px solid var(--dorado); border-radius: 14px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.7); display: none; flex-direction: column; z-index: 10000;
+            position: fixed; bottom: 100px; right: 30px; width: 360px;
+            background: var(--bleu-nuit); border: 2px solid var(--dorado); border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5); display: none; flex-direction: column; z-index: 10000; overflow: hidden;
         }
-        #chat-messages { padding: 20px; height: 300px; overflow-y: auto; font-size: 0.9rem; }
-        .message.bot { color: var(--blanc-ivoire); margin-bottom: 10px; }
-        .message.user { color: var(--dorado); text-align: right; margin-bottom: 10px; }
-        #chat-input { width: 100%; padding: 15px; background: var(--bleu-moyen); border: none; color: white; outline: none; }
+        .chat-header { background: var(--dorado); color: var(--bleu-nuit); padding: 15px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        #chat-messages { padding: 20px; height: 320px; overflow-y: auto; font-size: 0.95rem; background: var(--bleu-moyen); }
+        .message { padding: 12px 16px; border-radius: 12px; margin-bottom: 12px; max-width: 85%; }
+        .message.bot { background: var(--bleu-nuit); color: var(--blanc-ivoire); border-bottom-left-radius: 2px; }
+        .message.user { background: var(--dorado); color: var(--bleu-nuit); align-self: flex-end; text-align: right; border-bottom-right-radius: 2px; margin-left: auto; }
+        
+        .chat-input-area { display: flex; border-top: 1px solid rgba(212, 196, 149, 0.2); }
+        #chat-input { width: 100%; padding: 18px; background: var(--bleu-nuit); border: none; color: white; outline: none; font-family: var(--font-corps); }
+        #chat-send { background: var(--dorado); color: var(--bleu-nuit); border: none; padding: 0 25px; cursor: pointer; transition: 0.3s; }
+        #chat-send:hover { background: var(--dorado-hover); }
         
         #chat-button {
-            position: fixed; bottom: 25px; right: 25px;
-            background: var(--dorado); color: var(--bleu-nuit); width: 65px; height: 65px;
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--dorado); color: var(--bleu-nuit); width: 60px; height: 60px;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 1.6rem; cursor: pointer; z-index: 10000; box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            transition: transform 0.3s;
+            font-size: 1.5rem; cursor: pointer; z-index: 10000; box-shadow: 0 5px 20px rgba(212, 196, 149, 0.4);
+            transition: all 0.3s;
         }
-        #chat-button:hover { transform: scale(1.1); }
+        #chat-button:hover { transform: scale(1.1) rotate(10deg); }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .grid-2, .grid-3 { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2rem; }
+        @media (max-width: 900px) {
+            .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero { padding-top: 120px; }
             .apropos-content { flex-direction: column; text-align: center; }
-            header { padding: 15px 20px; }
             nav { display: none; } 
+            header { padding: 15px 20px; justify-content: center; }
         }
         
-        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
@@ -199,154 +265,351 @@
     <img src="images/logo-simple.png" alt="Logo Lemodgeo">
     <nav>
         <a href="#accueil">Accueil</a>
-        <a href="#apropos">Sur Moi</a>
-        <a href="#services">Services</a>
-        <a href="#videos">Vidéos</a>
+        <a href="#apropos">Sur MOI</a>
+        <a href="#services">Accompagnements</a>
+        <a href="#deroulement">Déroulement</a>
+        <a href="#faq">Questions</a>
         <a href="#contact" class="nav-cta">Prendre RDV</a>
     </nav>
 </header>
 
 <div class="hero" id="accueil">
     <div class="hero-content">
-        <img src="images/logo-simple.png" alt="Lemodgeo" class="hero-logo" style="height: 80px;"> 
-        <h1>Transformez ce qui vous limite</h1>
-        <p class="tagline">Quand les maux trouvent sens</p>
-        <p>Hypnose & Inconscient à Meung-sur-Loire. Je vous accompagne vers une liberté intérieure durable, avec douceur, jeu et curiosité.</p>
+        <img src="images/logo-complet.png" alt="Lemodgeo Hypnose" class="hero-logo"> 
+        
+        <h1>Hypnose & Inconscient</h1>
+        <p class="tagline">Découvrez votre force intérieure</p>
+        
+        <div class="hero-intro-box">
+            <p style="margin-bottom: 15px; font-size: 1.1rem;">
+                L'hypnose en cabinet se différencie du spectacle par une approche généralement <strong>plus lente</strong>, pour installer un changement profond et durable.
+            </p>
+            <p style="font-size: 1.1rem;">
+                C'est un état d'<strong>inconscient</strong> naturel et amplifié, un "rêve éveillé" qui permet d'accéder à vos ressources... et pourtant, le résultat peut être <strong>rapide</strong>.
+            </p>
+        </div>
+
+        <p style="font-size: 1.2rem; margin-bottom: 40px; font-weight: 500;">
+            Mon approche est pédagogique : vous êtes l'acteur de votre changement.
+        </p>
+        
         <a href="#contact" class="cta-button">Commencer mon chemin</a>
     </div>
 </div>
 
 <section id="temoignages" class="reveal">
-    <h2>Le changement, ils en parlent</h2>
-    <p class="section-subtitle">Des transformations réelles, des personnes comme vous</p>
+    <h2>Ils ont osé le changement</h2>
+    <p class="section-subtitle">Des retours authentiques sur leur expérience</p>
     <div class="grid-3">
-        <div class="testimonial-card">
-            <p>"Une seule séance a suffi, c'est bluffant. Simple et efficace. Mon problème de stress est complètement résolu."</p>
-            <strong class="testimonial-author">— Antoine L.</strong>
+        <div class="testimonial-card card">
+            <p>"Une expérience douce, subtile et puissante. Geoffrey m'a aidée à dialoguer avec une partie de moi que j'avais oubliée."</p>
+            <strong class="testimonial-author">— Sophie R.</strong>
         </div>
-        <div class="testimonial-card">
-            <p>"Je n'ai pas touché à une cigarette depuis notre séance il y a 3 mois. Je vis les choses beaucoup plus facilement."</p>
-            <strong class="testimonial-author">— Christine D.</strong>
+        <div class="testimonial-card card">
+            <p>"Je suis venue curieuse, je suis repartie apaisée. Et surtout, j'ai compris comment continuer seule. L'autonomie est clé."</p>
+            <strong class="testimonial-author">— Émilie P.</strong>
         </div>
-        <div class="testimonial-card">
-            <p>"Jérémy est très à l'écoute. J'ai retrouvé une confiance que j'avais perdue il y a des années."</p>
-            <strong class="testimonial-author">— Audrey X.</strong>
+        <div class="testimonial-card card">
+            <p>"L'hypnose avec Lemodgeo, c'est comme apprendre une nouvelle langue : celle de ton inconscient. Fascinant."</p>
+            <strong class="testimonial-author">— Marc L.</strong>
         </div>
     </div>
 </section>
 
-<section id="apropos" class="reveal">
-    <h2>L'Hypnose Pédagogique</h2>
+<section id="apropos" class="reveal" style="background: var(--bleu-moyen);">
+    <h2>Sur MOI</h2> 
+    <p class="section-subtitle">Pédagogue de l'inconscient • Observateur du vivant</p>
+    
     <div class="grid-2">
-        <div>
-            <p style="font-size: 1.1rem;">L'hypnose en cabinet se distingue du spectacle. Un état de conscience naturelle et amplifiée, un "rêve éveillé" qui permet d'accéder à vos ressources intérieures.</p>
-            <div class="philosophy-card">
-                "Votre inconscient n'est pas un mystère, c'est votre meilleur partenaire de jeu."
-            </div>
-            <p><strong>Nom approche est orientée pédagogie :</strong> le changement est concret, souvent obtenu en seulement 1 à 3 séances.</p>
-        </div>
         <div style="text-align: center;">
-            <img src="images/geoffrey-photo.png" alt="Geoffrey Celerier" class="apropos-img">
+            <img src="images/geoffrey-photo.png" alt="Geoffrey Celerier - Hypnothérapeute" class="apropos-img">
+            <div class="philosophy-card">
+                "Votre inconscient n'est pas un mystère obscur, c'est votre meilleur partenaire de jeu."
+            </div>
+        </div>
+        
+        <div class="apropos-text" style="font-size: 1.1rem;">
+            <p style="margin-bottom: 20px;">Mon histoire avec l'<strong>inconscient</strong> a commencé par une "magie" d'enfant : mes doigts collés chez ma gardienne. Cet émerveillement initial a créé chez moi une curiosité insatiable pour le fonctionnement de l'humain.</p>
+            
+            <p style="margin-bottom: 20px;">Mon parcours professionnel, centré sur le <strong>bien-être animal pendant 6 ans</strong>, m'a appris l'importance cruciale de l'observation attentive et de la bienveillance. C'est cette expertise que je transpose aujourd'hui : aider mes "confrères humains" à se comprendre pour mieux vivre.</p>
+            
+            <p style="margin-bottom: 30px;">De la PNL à l'harmonisation globale, ma quête est une plongée constante. L'hypnose s'est révélée être une discipline ancestrale et un véritable <strong>art de la pédagogie de soi</strong>.</p>
+
+            <div style="background: rgba(212, 196, 149, 0.1); border-left: 4px solid var(--dorado); padding: 20px; border-radius: 0 12px 12px 0;">
+                <strong style="color: var(--dorado); display: block; margin-bottom: 10px;">Pourquoi "Lemodgeo" ?</strong>
+                C'est un jeu de mots qui résonne avec « les mots de Géo », « les émotions de Géo » et votre propre « modjo » (votre force intérieure).
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-3" style="margin-top: 80px;">
+        <div class="value-card">
+            <div class="value-icon"><i class="fas fa-seedling"></i></div>
+            <h3>Autonomie</h3>
+            <p>Mon objectif : que vous n'ayez plus besoin de moi. Je vous transmets les outils pour continuer seul.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon"><i class="fas fa-puzzle-piece"></i></div>
+            <h3>Curiosité & Jeu</h3>
+            <p>L'approche est ludique. On ne "répare" pas, on explore avec curiosité comment vous fonctionnez.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <h3>Douceur Pédagogique</h3>
+            <p>Un chemin de transformation sans jugement, à votre rythme, en comprenant ce qui se joue.</p>
         </div>
     </div>
 </section>
 
 <section id="services" class="reveal">
-    <h2>Accompagnements</h2>
+    <h2>Accompagnements Ciblés</h2>
+    <p class="section-subtitle">Des solutions concrètes pour vos défis</p>
     <div class="grid-3">
         <div class="card">
             <img src="images/icon-tabac.png" alt="Arrêt Tabac" class="service-icon">
             <h3>Arrêt du Tabac</h3>
-            <p>Une séance unique pour vous libérer définitivement de la dépendance.</p>
-            <a href="#contact" style="color: var(--dorado); text-decoration: underline;">Prendre RDV</a>
+            <p>Libérez-vous définitivement. Une méthode éprouvée, généralement en <strong>1 à 3 séances</strong> maximum pour devenir non-fumeur.</p>
+            <a href="#contact" style="color: var(--dorado); text-decoration: underline; display: block; margin-top: 15px;">Prendre RDV</a>
         </div>
         <div class="card">
-            <img src="images/icon-stress.png" alt="Stress" class="service-icon">
-            <h3>Stress & Anxiété</h3>
-            <p>Retrouvez calme et maîtrise émotionnelle au quotidien.</p>
-            <a href="#contact" style="color: var(--dorado); text-decoration: underline;">Prendre RDV</a>
-        </div>
-        <div class="card">
-            <img src="images/icon-confiance.png" alt="Confiance" class="service-icon">
-            <h3>Confiance en Soi</h3>
-            <p>Développez un nouveau regard sur vous-même et activez votre potentiel.</p>
-            <a href="#contact" style="color: var(--dorado); text-decoration: underline;">Prendre RDV</a>
-        </div>
-        <div class="card">
-            <img src="images/icon-phobies.png" alt="Phobies" class="service-icon">
-            <h3>Phobies & Peurs</h3>
-            <p>Désactivez les réactions incontrôlées pour vivre sans entraves.</p>
-            <a href="#contact" style="color: var(--dorado); text-decoration: underline;">Prendre RDV</a>
-        </div>
-        <div class="card">
-            <img src="images/icon-poids.png" alt="Poids" class="service-icon">
+            <img src="images/icon-poids.png" alt="Poids et Alimentation" class="service-icon">
             <h3>Poids & Alimentation</h3>
-            <p>Travaillez sur les causes émotionnelles profondes.</p>
-            <a href="#contact" style="color: var(--dorado); text-decoration: underline;">Prendre RDV</a>
+            <p>Travaillez sur les causes émotionnelles profondes. Apprenez à gérer vos envies <strong>sans remords</strong> ni frustration.</p>
+            <a href="#contact" style="color: var(--dorado); text-decoration: underline; display: block; margin-top: 15px;">Prendre RDV</a>
         </div>
         <div class="card">
-            <img src="images/icon-performance.png" alt="Performance" class="service-icon">
-            <h3>Performance Mentale</h3>
-            <p>Préparez un examen ou boostez votre concentration.</p>
-            <a href="#contact" style="color: var(--dorado); text-decoration: underline;">Prendre RDV</a>
+            <img src="images/icon-stress.png" alt="Gestion du Stress" class="service-icon">
+            <h3>Stress & Anxiété</h3>
+            <p>Retrouvez le calme et la maîtrise émotionnelle. Apprenez à apaiser votre système nerveux au quotidien.</p>
+            <a href="#contact" style="color: var(--dorado); text-decoration: underline; display: block; margin-top: 15px;">Prendre RDV</a>
+        </div>
+        <div class="card">
+            <img src="images/icon-confiance.png" alt="Confiance en Soi" class="service-icon">
+            <h3>Confiance & Estime</h3>
+            <p>Développez un nouveau regard sur vous-même. Activez votre "modjo" et votre potentiel intérieur.</p>
+            <a href="#contact" style="color: var(--dorado); text-decoration: underline; display: block; margin-top: 15px;">Prendre RDV</a>
+        </div>
+        <div class="card">
+            <img src="images/icon-phobies.png" alt="Phobies et Peurs" class="service-icon">
+            <h3>Phobies & Peurs</h3>
+            <p>Désactivez les réactions incontrôlées. Comprenez le mécanisme de la peur pour vivre sans entraves.</p>
+            <a href="#contact" style="color: var(--dorado); text-decoration: underline; display: block; margin-top: 15px;">Prendre RDV</a>
+        </div>
+        <div class="card">
+            <img src="images/icon-performance.png" alt="Performance Mentale" class="service-icon">
+            <h3>Performance & Examens</h3>
+            <p>Préparez une épreuve, boostez votre concentration et votre mémoire grâce à l'état d'hypnose.</p>
+            <a href="#contact" style="color: var(--dorado); text-decoration: underline; display: block; margin-top: 15px;">Prendre RDV</a>
         </div>
     </div>
 </section>
 
-<section id="videos" class="reveal">
-    <h2>Ressources</h2>
-    <div class="grid-3">
-        <div class="card">
-            <h3>Vidéo à venir</h3>
-            <div class="video-container"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:#000;">Bientôt</div></div>
+<section id="harmonisation" class="reveal" style="background: var(--bleu-moyen);">
+    <h2>Harmonisation Globale</h2>
+    <p class="section-subtitle">Une approche complémentaire pour aller plus loin que les mots</p>
+
+    <div class="grid-2">
+        <div style="font-size: 1.1rem;">
+            <p style="margin-bottom: 25px;">
+                L'<strong>harmonisation globale</strong> est une technique énergétique basée sur le <strong>test de réponse musculaire</strong>. Elle est complémentaire à l'hypnose et permet d'aller chercher l'origine précise d'un blocage.
+            </p>
+            
+            <h3 style="color: var(--dorado); font-size: 1.3rem; margin-bottom: 15px;">Exploration des 3 secteurs :</h3>
+            <div class="secteurs-grid">
+                <div class="secteur-card">
+                    <div class="secteur-icon"><i class="fas fa-child"></i></div>
+                    <h4>Physique</h4>
+                    <p style="font-size: 0.9rem;">Corps & mémoires cellulaires</p>
+                </div>
+                <div class="secteur-card">
+                    <div class="secteur-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h4>Émotionnel</h4>
+                    <p style="font-size: 0.9rem;">Émotions & impacts vécus</p>
+                </div>
+                <div class="secteur-card">
+                    <div class="secteur-icon"><i class="fas fa-spa"></i></div>
+                    <h4>Spirituel</h4>
+                    <p style="font-size: 0.9rem;">Être profond & croyances</p>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <h3>Vidéo à venir</h3>
-            <div class="video-container"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:#000;">Bientôt</div></div>
-        </div>
-        <div class="card">
-            <h3>Vidéo à venir</h3>
-            <div class="video-container"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:#000;">Bientôt</div></div>
+
+        <div>
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div>
+                    <h4 style="color: var(--dorado); margin-bottom: 5px; font-size: 1.2rem;">Identification de l'origine</h4>
+                    <p>Utilisation du test musculaire pour dialoguer avec le corps et trouver la source exacte.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div>
+                    <h4 style="color: var(--dorado); margin-bottom: 5px; font-size: 1.2rem;">Libération & Harmonisation</h4>
+                    <p>Utilisation d'une phrase clé spécifique pour libérer le blocage identifié.</p>
+                </div>
+            </div>
+            <div class="card" style="text-align: center; margin-top: 30px; background: rgba(212, 196, 149, 0.05);">
+                <p style="font-size: 1.5rem; color: var(--dorado); font-weight: 700;">Séance : 50€</p>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="contact" style="background: var(--dorado);">
-    <h2>Prêt(e) pour le changement ?</h2>
+<section id="deroulement" class="reveal">
+    <h2>Le Chemin de votre Transformation</h2>
+    <p class="section-subtitle">Comment se déroule un accompagnement pédagogique ?</p>
+
+    <div style="max-width: 800px; margin: 0 auto; padding-left: 20px;">
+        <div class="timeline-item">
+            <div class="timeline-number">1</div>
+            <h3 style="color: var(--dorado); margin-bottom: 15px;">La Rencontre & l'Objectif</h3>
+            <p>Nous définissons ensemble votre objectif de manière écologique. Nous explorons avec curiosité ce qui vous amène et les stratégies actuelles de votre inconscient.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-number">2</div>
+            <h3 style="color: var(--dorado); margin-bottom: 15px;">Voyage en Hypnose</h3>
+            <p>Je vous guide vers cet état de "rêve éveillé" pour activer vos ressources internes, donner du sens aux blocages et créer de nouvelles connexions.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-number">3</div>
+            <h3 style="color: var(--dorado); margin-bottom: 15px;">Autonomie & Jeu</h3>
+            <p>Je vous transmets des outils concrets d'autohypnose. Vous devenez acteur de votre mieux-être pour ancrer le changement au quotidien.</p>
+        </div>
+    </div>
+</section>
+
+<section id="partenaires" class="reveal" style="background: var(--blanc-ivoire); color: var(--bleu-nuit);">
+    <h2 style="color: var(--bleu-nuit);">Votre bien-être... et celui de votre portefeuille</h2>
+    <p class="section-subtitle" style="color: var(--bleu-moyen); opacity: 1;">Un esprit sain dans une vie sereine</p>
+
+    <div class="grid-2">
+        <div>
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 25px;">
+                <img src="images/logo-emrys.png" alt="Emrys la carte coopérative" style="max-height: 70px;">
+                <h3 style="color: var(--bleu-nuit); margin: 0;">La Coopérative Solidaire Emrys</h3>
+            </div>
+            
+            <p style="margin-bottom: 20px; font-size: 1.1rem;">
+                Parce que le stress financier est souvent une charge mentale lourde qui freine le bien-être, je suis fier d'être partenaire de la coopérative solidaire <strong>Emrys</strong>. 
+            </p>
+            <p style="font-size: 1.1rem;">
+                C'est un système intelligent pour augmenter votre pouvoir d'achat simplement en changeant votre moyen de paiement pour vos courses quotidiennes. C'est aussi via ce partenaire que vous pourrez bientôt acquérir mes <strong>cartes cadeaux</strong>.
+            </p>
+            <a href="https://www.emryslacarte.fr/" target="_blank" class="cta-button" style="background: var(--bleu-nuit); color: white; margin-top: 30px; box-shadow: 0 5px 15px rgba(13, 27, 42, 0.3);">Découvrir la coopérative</a>
+        </div>
+        <div style="text-align: center;">
+             <i class="fas fa-hand-holding-heart" style="font-size: 9rem; color: var(--dorado); filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));"></i>
+             <p style="margin-top: 30px; font-size: 1.3rem; font-family: var(--font-titre); font-style: italic; color: var(--bleu-moyen); font-weight: 600;">"Il est important de se sentir bien, et pour son portefeuille aussi."</p>
+        </div>
+    </div>
+</section>
+
+<section id="faq" class="reveal" style="background: var(--bleu-moyen);">
+    <h2>Questions Fréquentes</h2>
+    <p class="section-subtitle">Lever les doutes avec pédagogie</p>
+
+    <div style="max-width: 800px; margin: 0 auto;">
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Vais-je perdre le contrôle ou dormir ?</span>
+                <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+                <p>Absolument pas. L'hypnose est un état de <strong>super-vigilance</strong>, pas de sommeil. Vous restez maître de vous-même, vous entendez tout et vous pouvez sortir de l'état quand vous le souhaitez. Je suis votre guide, vous êtes le pilote.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>L'hypnose fonctionne-t-elle sur tout le monde ?</span>
+                <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+                <p>Oui, car c'est un état naturel que nous traversons tous plusieurs fois par jour (quand vous êtes "dans la lune"). La seule condition est d'être <strong>volontaire</strong> et curieux de l'expérience.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Combien de séances sont nécessaires ?</span>
+                <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+                <p>Chaque personne est unique. Cependant, l'hypnose est une thérapie brève. En général, comptez entre <strong>2 et 5 séances</strong> pour un objectif. L'arrêt du tabac se fait souvent en une seule séance (avec un suivi si besoin).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact-section reveal">
+    <h2>Prêt(e) à commencer le jeu ?</h2>
+    <p class="section-subtitle">Votre liberté intérieure vous attend</p>
     <div class="contact-card">
-        <p style="font-size: 1.2rem; margin-bottom: 30px;">Je reçois à <strong>Meung-sur-Loire</strong> (10 rue Guy Peron) et en <strong>Visio</strong>.</p>
-        <p><strong>Tél :</strong> 06 19 91 67 46</p>
-        <p><strong>Email :</strong> lemodgeo@gmail.com</p>
-        <a href="https://calendly.com/lemodgeo/sceance-visio" target="_blank" class="cta-button" style="margin-top: 30px; background: var(--bleu-nuit); color: white;">Réserver une Séance</a>
+        <p style="font-size: 1.3rem; margin-bottom: 40px; font-weight: 500;">
+            Je vous reçois avec plaisir au cabinet à <strong>Meung-sur-Loire</strong> (10 rue Guy Peron) ou en <strong>Visio</strong>.
+        </p>
+        
+        <div class="grid-3" style="margin-bottom: 40px;">
+            <div>
+                <i class="fas fa-phone-alt" style="font-size: 2rem; color: var(--dorado); margin-bottom: 10px;"></i>
+                <p style="font-weight: bold;">06 19 91 67 46</p>
+            </div>
+            <div>
+                 <i class="fas fa-envelope" style="font-size: 2rem; color: var(--dorado); margin-bottom: 10px;"></i>
+                <p style="font-weight: bold;">lemodgeo@gmail.com</p>
+            </div>
+            <div>
+                 <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: var(--dorado); margin-bottom: 10px;"></i>
+                <p style="font-weight: bold;">Meung-sur-Loire (45)</p>
+            </div>
+        </div>
+
+        <a href="https://calendly.com/lemodgeo/sceance-visio" target="_blank" class="cta-button" style="background: var(--bleu-nuit); color: white; font-size: 1.1rem; padding: 20px 50px;">
+            <i class="far fa-calendar-alt" style="margin-right: 10px;"></i> Réserver ma séance
+        </a>
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">Consultations sur rendez-vous uniquement.</p>
     </div>
 </section>
 
 <footer>
-    <div class="footer-grid">
-        <div class="social-links">
-            <a href="https://www.facebook.com/share/164zckDqKu/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://youtube.com/@geoffreycelerier9559?si=7QIgIcegbdpnh4ou" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
+    <div class="grid-2" style="text-align: left; margin-bottom: 40px; align-items: flex-start;">
         <div>
-            <p>&copy; 2025 Lemodgeo. SIRET : 909 374 167 00015</p>
-            <p>Partenaire : <a href="https://www.emryslacarte.fr/" target="_blank" style="color: var(--dorado);">Emrys la carte</a></p>
+            <img src="images/logo-simple.png" alt="Lemodgeo" style="height: 60px; margin-bottom: 20px;">
+            <p style="font-size: 1.1rem; font-style: italic; color: var(--dorado); margin-bottom: 20px;">"Quand les maux trouvent sens, le jeu peut commencer."</p>
+        </div>
+        <div style="text-align: right;">
+             <h3 style="color: var(--dorado); font-size: 1.2rem; margin-bottom: 20px;">Suivez l'aventure</h3>
+            <div class="social-links" style="justify-content: flex-end;">
+                <a href="https://www.facebook.com/share/164zckDqKu/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://youtube.com/@geoffreycelerier9559" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                 <a href="mailto:lemodgeo@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </div>
+
+    <p style="font-size: 0.9rem; opacity: 0.7;">&copy; 2025 Lemodgeo - Geoffrey Celerier. Tous droits réservés. SIRET : 909 374 167 00015</p>
+    <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 10px;">L'hypnose n'est pas une démarche médicale et ne se substitue pas à un suivi par un professionnel de santé.</p>
 </footer>
 
 <div id="chat-button"><i class="fas fa-comments"></i></div>
 <div id="chatbot-container">
+    <div class="chat-header">
+        <i class="fas fa-robot"></i> Assistant Lemodgeo
+    </div>
     <div id="chat-messages">
-        <div class="message bot">Bonjour ! Je suis l'assistant de Lemodgeo. Comment puis-je vous aider ?</div>
+        <div class="message bot">Bonjour ! Je suis l'assistant virtuel de Geoffrey. Je suis là pour répondre à vos questions sur l'hypnose ou les RDV. Dites-moi tout !</div>
     </div>
     <div class="chat-input-area">
-        <input id="chat-input" type="text" placeholder="Écrivez votre message..." />
-        <button id="chat-send" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        <input id="chat-input" type="text" placeholder="Écrivez votre message ici..." />
+        <button id="chat-send"><i class="fas fa-paper-plane"></i></button>
     </div>
 </div>
 
 <script>
-    // REVEAL ANIMATION
+    // ===== REVEAL ANIMATION =====
     function reveal() {
         var reveals = document.querySelectorAll(".reveal");
         for (var i = 0; i < reveals.length; i++) {
@@ -358,31 +621,65 @@
     }
     window.addEventListener("scroll", reveal); reveal();
 
-    // CHATBOT
+    // ===== SMART NAVBAR (Disparaît au scroll down) =====
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector("header");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            header.style.transform = "translateY(-100%)"; // Cache le menu
+        } else {
+            header.style.transform = "translateY(0)"; // Montre le menu
+        }
+        lastScrollY = window.scrollY;
+        // Changement d'opacité
+        header.style.background = window.scrollY > 50 ? 'rgba(19, 42, 68, 0.98)' : 'rgba(19, 42, 68, 0.95)';
+    });
+
+    // ===== FAQ ACCORDION =====
+    function toggleFaq(element) {
+        const answer = element.nextElementSibling;
+        const toggle = element.querySelector('.faq-toggle i');
+        // Ferme les autres
+        document.querySelectorAll('.faq-answer').forEach(item => { if (item !== answer) item.classList.remove('active'); });
+        document.querySelectorAll('.faq-toggle i').forEach(item => { if (item !== toggle) item.classList.remove('fa-minus'), item.classList.add('fa-plus'); });
+        // Ouvre/Ferme l'actuel
+        answer.classList.toggle('active');
+        toggle.classList.toggle('fa-plus'); toggle.classList.toggle('fa-minus');
+    }
+
+    // ===== CHATBOT SIMPLE =====
     const btnChat = document.getElementById("chat-button");
     const boxChat = document.getElementById("chatbot-container");
     const inputChat = document.getElementById("chat-input");
     const messagesChat = document.getElementById("chat-messages");
+    const sendBtn = document.getElementById("chat-send");
 
     btnChat.addEventListener('click', () => {
-        const isHidden = boxChat.style.display !== "flex";
-        boxChat.style.display = isHidden ? "flex" : "none";
-        btnChat.style.display = isHidden ? "flex" : "none"; 
+        boxChat.style.display = boxChat.style.display === "flex" ? "none" : "flex";
+        if(boxChat.style.display === "flex") inputChat.focus();
     });
 
-    async function sendMessage() {
+    function sendMessage() {
         const userMsg = inputChat.value.trim();
         if (!userMsg) return;
         messagesChat.innerHTML += `<div class="message user">${userMsg}</div>`;
         inputChat.value = ""; messagesChat.scrollTop = messagesChat.scrollHeight;
+        
         setTimeout(() => {
-            const reply = "Merci ! Pour une réponse rapide, contactez Geoffrey au 06 19 91 67 46.";
+            let reply = "Merci ! Pour une réponse personnalisée et rapide, le mieux est de contacter Geoffrey directement au <strong>06 19 91 67 46</strong>.";
+            // Réponses automatiques basiques
+            const lowerMsg = userMsg.toLowerCase();
+            if (lowerMsg.includes('tarif') || lowerMsg.includes('prix')) reply = "La séance d'hypnose est à 70€. L'arrêt du tabac (séance unique) est à 120€. L'harmonisation globale est à 50€.";
+            else if (lowerMsg.includes('rdv') || lowerMsg.includes('rendez-vous')) reply = "Vous pouvez prendre RDV en ligne sur <a href='https://calendly.com/lemodgeo/sceance-visio' target='_blank' style='color:var(--dorado);'>Calendly</a> ou par téléphone.";
+            else if (lowerMsg.includes('où') || lowerMsg.includes('adresse')) reply = "Le cabinet est au 10 rue Guy Peron à Meung-sur-Loire. Des séances en visio sont aussi possibles.";
+            
             messagesChat.innerHTML += `<div class="message bot">${reply}</div>`;
             messagesChat.scrollTop = messagesChat.scrollHeight;
-        }, 1000);
+        }, 800);
     }
+    sendBtn.addEventListener('click', sendMessage);
     inputChat.addEventListener("keydown", (e) => { if (e.key === "Enter") sendMessage(); });
 </script>
-<script async src="https://cdn.builder.io/js/webcomponents"></script>
+
 </body>
 </html>
